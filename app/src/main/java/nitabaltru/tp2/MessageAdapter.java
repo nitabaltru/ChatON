@@ -116,7 +116,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             } else {
                 Glide
                         .with(imageView.getContext())
-                        .load(Utils.GRAVATAR_PREFIX + Utils.md5(data.getUserEmail()) + ".jpg")
+                        .load(Utils.GRAVATAR_PREFIX + Utils.md5(data.getUserEmail()) + "?d=mm")
                         .apply(RequestOptions.circleCropTransform())
                         .into(imageView);
             }
