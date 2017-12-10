@@ -116,8 +116,9 @@ public class MainActivity extends AppCompatActivity {
                 UserStorage.saveUserInfo(MainActivity.this, "noName", "noEmail");
                 this.namePickerActivityLaunch();
                 return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     /**
