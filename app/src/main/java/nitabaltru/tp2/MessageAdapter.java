@@ -12,19 +12,25 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
+ * A class to define the adapter of the recyclerView
  * Created by nitabaltru on 27/11/2017.
  */
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
+    /**
+     * a list containing all the messages
+     */
     private List<Message> datas;
 
-    public MessageAdapter(List<Message> datas) {
+    /**
+     * Constructor
+     * @param datas the messages
+     */
+    MessageAdapter(List<Message> datas) {
 
         this.datas = datas;
     }
@@ -52,7 +58,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         private final TextView textView3;
         private final ImageView imageView;
 
-        public ViewHolder(View itemView) {
+        /**
+         * To get all the Views of the message
+         * @param itemView the itemView
+         */
+        ViewHolder(View itemView) {
             super(itemView);
 
             textView1 = itemView.findViewById(R.id.userTextView);
@@ -63,6 +73,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         }
 
+        /**
+         * To set the data in each field
+         * @param data a Message
+         */
         public void setData(Message data) {
             textView1.setText(data.getUserName());
             textView2.setText(data.getContent());

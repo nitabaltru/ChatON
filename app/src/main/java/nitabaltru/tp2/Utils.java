@@ -1,19 +1,26 @@
 package nitabaltru.tp2;
 
-import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
+ * a class with utils to be used internally
  * Created by nitabaltru on 06/12/2017.
  */
 
-public class Utils {
+class Utils {
 
-    public static final String GRAVATAR_PREFIX = "https://www.gravatar.com/avatar/";
+    /**
+     * url of gravatar
+     */
+    static final String GRAVATAR_PREFIX = "https://www.gravatar.com/avatar/";
 
-    public static final String MD5(final String s) {
+    /**
+     * allows to convert an string to MD5
+     * @param s the string to be converted
+     * @return string
+     */
+    static String MD5(final String s) {
         final String MD5 = "MD5";
         try {
             // Create MD5 Hash
@@ -25,9 +32,9 @@ public class Utils {
             // Create Hex String
             StringBuilder hexString = new StringBuilder();
             for (byte aMessageDigest : messageDigest) {
-                String h = Integer.toHexString(0xFF & aMessageDigest);
+                StringBuilder h = new StringBuilder(Integer.toHexString(0xFF & aMessageDigest));
                 while (h.length() < 2)
-                    h = "0" + h;
+                    h.insert(0, "0");
                 hexString.append(h);
             }
             return hexString.toString();

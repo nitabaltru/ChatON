@@ -1,19 +1,39 @@
 package nitabaltru.tp2;
 
 /**
+ * A classe representing a message and all its information.
  * Created by nitabaltru on 27/11/2017.
  */
 
-public class Message {
+class Message {
+    /**
+     * the message itself
+     */
     private String content;
+
+    /**
+     * the name of the user
+     */
     private String userName;
+
+    /**
+     * the email of the user
+     */
     private String userEmail;
+
+    /**
+     * The timestamp (when the message has been sent)
+     */
     private Long timestamp;
 
-    public Message() {
-    }
-
-    public Message(String content, String userName, String userEmail, Long timestamp)
+    /**
+     * the constructor of a message
+     * @param content the message
+     * @param userName the user's name
+     * @param userEmail the user's email
+     * @param timestamp the timestamp
+     */
+    Message(String content, String userName, String userEmail, Long timestamp)
     {
         this.content = content;
         this.userName = userName;
@@ -21,19 +41,35 @@ public class Message {
         this.userEmail = userEmail;
     }
 
-    public String getContent() {
+    /**
+     * get the content of the message
+     * @return String
+     */
+    String getContent() {
         return this.content;
     }
 
-    public String getUserName() {
+    /**
+     * get the user name
+     * @return String
+     */
+    String getUserName() {
         return this.userName;
     }
 
-    public Long getTimestamp() {
+    /**
+     * get the timestamp
+     * @return Long
+     */
+    Long getTimestamp() {
         return this.timestamp;
     }
 
-    public String getUserEmail() {
+    /**
+     * get the user email
+     * @return String
+     */
+    String getUserEmail() {
         return this.userEmail;
     }
 }

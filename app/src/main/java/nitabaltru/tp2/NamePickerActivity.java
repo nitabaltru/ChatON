@@ -9,11 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 /**
+ * A class representing the activity that allows the user to pick a name and an email
  * Created by nitabaltru on 04/12/2017.
  */
 public class NamePickerActivity extends AppCompatActivity {
-
-    public static final String TAG = NamePickerActivity.class.getSimpleName();
 
     EditText mNameEditText;
     EditText mEmailEditText;
@@ -24,30 +23,40 @@ public class NamePickerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_namepicker);
 
+        //get the view of each field
         mNameEditText = findViewById(R.id.mNameEditText);
         mEmailEditText = findViewById(R.id.mEmailEditText);
         mSubmitButton = findViewById(R.id.mSubmitButton);
 
+        //listener to allow send the information and log in
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!TextUtils.isEmpty(mNameEditText.getText().toString()) && !TextUtils.isEmpty(mEmailEditText.getText().toString())) {
                     if (saveData()) {
                         goToMainActivity();
-                        finish();
                     }
                 }
 
             }
         });
     }
-        private boolean saveData() {
+
+    /**
+     * Set the data on the UserStorage
+     * @return true
+     */
+    private boolean saveData() {
             UserStorage.saveUserInfo(NamePickerActivity.this, mNameEditText.getText().toString(), mEmailEditText.getText().toString());
             return true;
         }
 
-        private void goToMainActivity() {
+    /**
+     * method to launch the main activity
+     */
+    private void goToMainActivity() {
             Intent intent = new Intent(NamePickerActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
 }
