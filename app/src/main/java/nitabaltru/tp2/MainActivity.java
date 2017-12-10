@@ -26,11 +26,11 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseReference databaseReference;
-    EditText editText;
-    ImageButton button;
-    MessageAdapter adapter;
-    User user;
+    private DatabaseReference databaseReference;
+    private EditText editText;
+    private ImageButton button;
+    private MessageAdapter adapter;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
