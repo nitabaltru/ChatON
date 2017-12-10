@@ -18,6 +18,7 @@ There could be some problems with other Android operating system.
 
 - Sign in / Sign out
 - Send / receive messages
+- If you have a gravatar account linked to your e-mail your image will be showed, if not the gravatar default picture will be used.
 
 ## Contribution
 
