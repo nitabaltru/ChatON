@@ -20,7 +20,7 @@ There could be some problems with other Android operating system.
 - Send / receive messages
 - The multiline messages are allowed
 - Deleting messages is automatic on long click
-- If you have a gravatar account linked to your e-mail your image will be showed, if not a default picture will be used.
+- If you have a gravatar account linked to your e-mail your image will be showed, if not the gravatar's mistery man picture will be used.
 - The application has its own icon.
 - Each message has its timestamp of when it was sent.
 - Log out - close the session by clicking on the cross 
