@@ -27,6 +27,11 @@ class Message {
     private Long timestamp;
 
     /**
+     * a constructor with no arguments used by firebase database
+     */
+    Message() {}
+
+    /**
      * the constructor of a message
      * @param content the message
      * @param userName the user's name

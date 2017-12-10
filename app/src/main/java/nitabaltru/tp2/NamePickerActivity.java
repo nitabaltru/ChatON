@@ -14,9 +14,9 @@ import android.widget.EditText;
  */
 public class NamePickerActivity extends AppCompatActivity {
 
-    EditText mNameEditText;
-    EditText mEmailEditText;
-    Button mSubmitButton;
+    private EditText mNameEditText;
+    private EditText mEmailEditText;
+    private Button mSubmitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,24 +32,26 @@ public class NamePickerActivity extends AppCompatActivity {
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!TextUtils.isEmpty(mNameEditText.getText().toString()) && !TextUtils.isEmpty(mEmailEditText.getText().toString())) {
-                    if (saveData()) {
-                        goToMainActivity();
-                    }
+                if (saveData()) {
+                    goToMainActivity();
                 }
-
             }
         });
     }
 
     /**
      * Set the data on the UserStorage
-     * @return true
+     * @return boolean
      */
     private boolean saveData() {
+        Boolean name = mNameEditText.getText().toString().isEmpty();
+        Boolean email = mEmailEditText.getText().toString().isEmpty();
+        if (!name && !email) {
             UserStorage.saveUserInfo(NamePickerActivity.this, mNameEditText.getText().toString(), mEmailEditText.getText().toString());
             return true;
         }
+        return false;
+    }
 
     /**
      * method to launch the main activity
