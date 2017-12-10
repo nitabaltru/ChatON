@@ -5,6 +5,7 @@ It allows people to connect to the app using a name and an e-mail, and then to c
 
 <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80"/> (not working yet but it could be nice :) lol )
 
+<img src="/ScreenShots/Screenshot_20171210-155756.png" width="300" /> <img src="/ScreenShots/Screenshot_20171210-155741.png" width="300" />
 
 ## Getting Started
 
