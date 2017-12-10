@@ -5,7 +5,6 @@ It allows people to connect to the app using a name and an e-mail, and then to c
 
 <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80"/> (not working yet but it could be nice :) lol )
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/21ed6169d0614d5192b55aa67299e53b)](https://www.codacy.com/app/nitabaltru/ChatON?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nitabaltru/ChatON&amp;utm_campaign=Badge_Grade)
 
 ## Getting Started
 
@@ -18,7 +17,9 @@ There could be some problems with other Android operating system.
 
 - Log in - with a name and an email
 - Send / receive messages
-- If you have a gravatar account linked to your e-mail your image will be showed, if not the gravatar default picture will be used.
+- The multiline messages are allowed
+- Deleting messages is automatic on long click
+- If you have a gravatar account linked to your e-mail your image will be showed, if not a default picture will be used.
 - The application has its own icon.
 - Each message has its timestamp of when it was sent.
 - Log out - close the session by clicking on the cross 
