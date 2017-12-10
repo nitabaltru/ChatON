@@ -13,6 +13,8 @@ There could be some problems with other Android operating system.
 
 ## Author
 
-[nitabaltru](https://github.com/nitabaltru)
+[Diana Baltrusaitis](https://github.com/nitabaltru)
 
 ## License
+
+This project is licensed under the MIT License - a really simple and permissive license :) - see the [LICENSE](LICENSE) file for details
