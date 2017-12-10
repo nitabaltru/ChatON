@@ -1,10 +1,11 @@
-# ChatON
+# ChatON <img src="app/src/main/res/mipmap-hdpi/ic_launcher_round.png" /> 
 
 This basic firabase based chat app is part of an android project for the university.
 It allows people to connect to the app using a name and an e-mail, and then to chat with all the people who has this app.
 
 <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80"/> (not working yet but it could be nice :) lol )
 
+<img src="/ScreenShots/Screenshot_20171210-155756.png" width="300" /> <img src="/ScreenShots/Screenshot_20171210-155741.png" width="300" />
 
 ## Getting Started
 
