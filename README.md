@@ -16,9 +16,12 @@ There could be some problems with other Android operating system.
 
 ## Features
 
-- Sign in / Sign out
+- Log in - with a name and an email
 - Send / receive messages
 - If you have a gravatar account linked to your e-mail your image will be showed, if not the gravatar default picture will be used.
+- The application has its own icon.
+- Each message has its timestamp of when it was sent.
+- Log out - close the session by clicking on the cross 
 
 ## Contribution
 
