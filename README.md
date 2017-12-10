@@ -3,9 +3,9 @@
 This basic firabase based chat app is part of an android project for the university.
 It allows people to connect to the app using a name and an e-mail, and then to chat with all the people who has this app.
 
-<a href="" target="_blank">
-  <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80"/>
-</a> (not working yet but it could be nice :) lol )
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80"/> (not working yet but it could be nice :) lol )
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/21ed6169d0614d5192b55aa67299e53b)](https://www.codacy.com/app/nitabaltru/ChatON?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nitabaltru/ChatON&amp;utm_campaign=Badge_Grade)
 
 ## Getting Started
 
