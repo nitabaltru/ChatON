@@ -12,7 +12,6 @@ import android.widget.EditText;
  * Created by nitabaltru on 04/12/2017.
  */
 public class NamePickerActivity extends AppCompatActivity {
-
     private EditText mNameEditText;
     private EditText mEmailEditText;
     private Button mSubmitButton;
