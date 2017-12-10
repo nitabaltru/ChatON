@@ -26,11 +26,11 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private DatabaseReference databaseReference;
-    private EditText editText;
-    private ImageButton button;
-    private MessageAdapter adapter;
-    private User user;
+    DatabaseReference databaseReference;
+    EditText editText;
+    ImageButton button;
+    MessageAdapter adapter;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         user = UserStorage.getUser(this);
 
         //if there is no name or/and no email it will change to the name picker activity
-        if ("noName".equals(user.name) || "noEmail".equals(user.email) ) {
+        if ("noName".equals(user.getName()) || "noEmail".equals(user.getEmail()) ) {
             this.namePickerActivityLaunch();
         }
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     DatabaseReference newDbRef = databaseReference.push();
                     newDbRef.setValue(
-                        new Message(editText.getText().toString(), user.name , user.email , System.currentTimeMillis()));
+                        new Message(editText.getText().toString(), user.getName(), user.getEmail(), System.currentTimeMillis()));
                     editText.setText("");
                 }
             }
@@ -116,9 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 UserStorage.saveUserInfo(MainActivity.this, "noName", "noEmail");
                 this.namePickerActivityLaunch();
                 return true;
-            default:
-                return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
     }
 
     /**

@@ -10,12 +10,12 @@ class User {
     /**
      * the user's name
      */
-    String name;
+    private String name;
 
     /**
      * the user's email
      */
-    String email;
+    private String email;
 
     /**
      * constructor
@@ -25,5 +25,13 @@ class User {
     User(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    String getEmail() {
+        return email;
+    }
+
+    String getName() {
+        return name;
     }
 }
