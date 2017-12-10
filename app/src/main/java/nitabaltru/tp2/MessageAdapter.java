@@ -9,9 +9,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +24,12 @@ import java.util.List;
  */
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference = database.getReference("chat/messages");
+
+    private List<String> keys;
+
     /**
      * a list containing all the messages
      */
@@ -30,9 +39,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
      * Constructor
      * @param datas the messages
      */
-    MessageAdapter(List<Message> datas) {
+    MessageAdapter(List<Message> datas, List<String> keys) {
 
         this.datas = datas;
+        this.keys = keys;
     }
 
     @Override
@@ -42,8 +52,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.setData(datas.get(position));
+    }
+
+    public void delete(int position) { //removes the row
+        databaseReference.getRoot().child("chat/messages").child(keys.get(position)).removeValue();
+        keys.remove(position);
+        datas.remove(position);
+        notifyItemRemoved(position);
     }
 
     @Override
@@ -70,6 +87,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             textView3 = itemView.findViewById(R.id.dateTextView);
             imageView = itemView.findViewById(R.id.userImageView);
 
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    longClick(v);
+                    return true;
+                }
+            });
 
         }
 
@@ -97,10 +121,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                         .into(imageView);
             }
         }
+
+        public void longClick(View v) {
+            delete(getAdapterPosition()); //calls the method above to delete
+        }
     }
 
-    public void setData(List<Message> datas){
+    public void setData(List<Message> datas, List<String> keys){
         this.datas = datas;
+        this.keys = keys;
         this.notifyDataSetChanged();
     }
 }

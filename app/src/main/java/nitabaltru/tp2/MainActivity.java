@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
             this.namePickerActivityLaunch();
         }
 
-        //to find all the wiews used on the main activity
+        //to find all the views used on the main activity
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         editText = findViewById(R.id.inputEditText);
         button = findViewById(R.id.sendButton);
-        adapter = new MessageAdapter(new ArrayList<Message>());
+        adapter = new MessageAdapter(new ArrayList<Message>(), new ArrayList<String>());
 
         //setting the Message Adapter
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -68,11 +68,13 @@ public class MainActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                List<String> keys = new ArrayList<>();
                 List<Message> items = new ArrayList<>();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     items.add(postSnapshot.getValue(Message.class));
+                    keys.add(postSnapshot.getKey());
                 }
-                adapter.setData(items);
+                adapter.setData(items, keys);
             }
 
             @Override
